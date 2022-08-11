@@ -1,9 +1,11 @@
 class FirstPage{
 
-    header = '.hero__title.heroTitle_ohkl';
-    majorImgBrausers = '//*[@src="img/logos/Browsers.png"]';
-    linkBing = '//*[@href="https://bing.com"]';
-    logoList = '//*[@class="logosList_zAAF"]';
+    constructor(){
+     this.header = '.hero__title.heroTitle_ohkl';
+     this.majorImgBrausers = '//*[@src="img/logos/Browsers.png"]';
+     this.linkBing = '//*[@href="https://bing.com"]';
+     this.logoList = '//*[@class="logosList_zAAF"]';
+    }
 
 }
 
