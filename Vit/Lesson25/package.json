@@ -1,0 +1,19 @@
+{
+  "name": "lesson25",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:parallel": "npx cypress-parallel -s cy:run -t 4 -m false"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cypress": "^10.4.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
+}
