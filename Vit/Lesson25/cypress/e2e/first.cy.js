@@ -22,50 +22,50 @@ describe('Test the first component of example-4 page', () => {
 
 
 
-  it('Check subtitle of the first box', () => {
+  it('Shoul be appropriate text "Click to highlight, double click to select"', () => {
     cy.xpath(subTitleOfFirstBox).should('have.text', 'Click to highlight, double click to select');
   });
 
 
-  it('Check that nothin selected in first box after reload', () => {
+  it('Shoul be appropriate text "Nothing selected"', () => {
     cy.get(selectedItemText).should('have.text', 'Nothing selected');
   });
 
 
-  it('Click to option one (single click)', () => {
+  it('Should be appropriate background-color before "rgba(0, 0, 0, 0)" and after click "rgb(221, 221, 221)"', () => {
     cy.get(optionOne).should('have.css', 'background-color', 'rgba(0, 0, 0, 0)');
     cy.get(optionOne).click();
     cy.get(optionOne).should('have.css', 'background-color', 'rgb(221, 221, 221)');
   });
 
 
-  it('Double click to option one', () => {
+  it('Should be appropriate text "Option One"', () => {
     cy.get(optionOne).dblclick();
     cy.get(selectedItemText).should('have.text', 'Option One');
   });
 
 
-  it('Click to Option two (single click)', () => {
+  it('Should be appropriate background-color before "rgba(0, 0, 0, 0)" and after click "rgb(221, 221, 221)"', () => {
     cy.get(optionTwo).should('have.css', 'background-color', 'rgba(0, 0, 0, 0)');
     cy.get(optionTwo).click();
     cy.get(optionTwo).should('have.css', 'background-color', 'rgb(221, 221, 221)');
   });
 
 
-  it('Double click to option two', () => {
+  it('Should be appropriate text "Option Two"', () => {
     cy.get(optionTwo).dblclick();
     cy.get(selectedItemText).should('have.text', 'Option Two');
   });
 
 
-  it('Click to option three (single click)', () => {
+  it('Should be appropriate background-color before "rgba(0, 0, 0, 0)" and after click "rgb(221, 221, 221)"', () => {
     cy.get(optionThree).should('have.css', 'background-color', 'rgba(0, 0, 0, 0)');
     cy.get(optionThree).click();
     cy.get(optionThree).should('have.css', 'background-color', 'rgb(221, 221, 221)');
   });
 
 
-  it('Double click to option three', () => {
+  it('Should be appropriate text "Option Three"', () => {
     cy.get(optionThree).dblclick();
     cy.get(selectedItemText).should('have.text', 'Option Three');
   });

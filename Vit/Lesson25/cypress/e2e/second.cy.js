@@ -18,18 +18,18 @@ describe('Test the second component of example-4 page', () => {
   });
 
 
-  it('Check title of the second box', () => {
+  it('Should be appropriate text ".check() and .uncheck()"', () => {
     const titleSecondBox = SecondBox.getBoxTitle(2);
     titleSecondBox.should('have.text', '.check() and .uncheck()');
   });
 
 
-  it('Check that nothin selected in first box after reload', () => {
+  it('Should be appropriate text "0"', () => {
     SecondBox.numberOfChoosenBoxes.should('have.text', '0');
   });
 
 
-  it('Check checkbox after selection the first option', () => {
+  it('Should be appropriate text "1"', () => {
     SecondBox.checkOption(2);
     SecondBox.getCheckBox(2).should('be.checked');
     SecondBox.getCheckBox(1).should('not.be.checked');
@@ -38,7 +38,7 @@ describe('Test the second component of example-4 page', () => {
   });
 
 
-  it('Check options after check and unchek option', () => {
+  it('Should be appropriate text "0" after check and unchec', () => {
     SecondBox.checkOption(1);
     SecondBox.checkOption(3)
     SecondBox.getCheckBox(1).should('be.checked');
@@ -52,7 +52,7 @@ describe('Test the second component of example-4 page', () => {
   });
 
 
-  it('Check checkbox after selection all options', () => {
+  it('Should be appropriate text "3" after check all options and should be checked', () => {
     SecondBox.checkOption(1);
     SecondBox.checkOption(2);
     SecondBox.checkOption(3);
