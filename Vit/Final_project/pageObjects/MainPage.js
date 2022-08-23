@@ -4,27 +4,21 @@ const { BasePage } = require('./BasePage');
 class MainPage extends BasePage{
 
     get inputPromoCodeField () {
-        return $('p.ui-a6a')
+        return $('//*[contains(text(), "Введите промокод")]')
         }
 
     get siteGreetingImg () {
-        return $('.a4.aac5')
+        return $('.a4.caa5')
     }
 
     get ButtonPromocodeEnter () {
-        return $('.ui-f6.ui-f8.ui-k')
+        return $('//*[@class="ui-a3 ui-a5 ui-e7"]/*[contains(text(), "Вход или регистрация")]')
     }
 
     get popularThingsElement(){
-        return $('.a4.a5.dx.tsHeadL')
+        return $('.a4.a5.dx1.tsHeadL')
     }
 
-
-    async clickOnGreetingImg() {
-        await this.siteGreetingImg.waitForClickable()
-        await this.siteGreetingImg.click()
-        
-    }
 }
 
 module.exports = { MainPage }

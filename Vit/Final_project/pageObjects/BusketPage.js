@@ -5,7 +5,7 @@ class BusketPage extends BasePage{
 
 
     get itemInBusket(){
-        return $('.rd6.dr7.r7d.ds0.tsBodyM.ua9')
+        return $('.dr8.rd8.d9r.sd1.tsBodyM.ua9')
     }
 
     get amountOfThingsPage(){
@@ -13,7 +13,7 @@ class BusketPage extends BasePage{
     }
 
     get amountOfThingsHeaderBusket(){
-        return $('//*[@href="/cart"]/*[@class="tsCaptionBold c6w"]')
+        return $('//*[@href="/cart"]/*[@class="tsCaptionBold w7c"]')
     }
 
     get clearBusket(){
@@ -21,7 +21,7 @@ class BusketPage extends BasePage{
     }
 
     get verificationOfClearing(){
-        return $('//*[@class="ui-f6"]/*[@class="ui-j3"][contains(text(), "Удалить")]')
+        return $('//*[@class="ui-a3"]/*[@class="ui-e0"][contains(text(), "Удалить")]')
     }
 
     get emptyBusketConfirmation(){
@@ -30,29 +30,29 @@ class BusketPage extends BasePage{
 
 
     get popUpWinpowClose(){
-        return $('//*[@class="ui-f6 ui-g7 ui-j0"]')
+        return $('//*[@class="ui-a3 ui-b4 ui-d8"]')
     }
 
     async clearingOfBusket(){
         if (this.popUpWinpowClose.isDisplayed()){
            await this.popUpWinpowClose.click()
-           await browser.pause(2000)
+           await this.clearBusket.waitForClickable({ timeout:4000 })
            await this.clearBusket.click()
-           await browser.pause(2000)
+           await this.verificationOfClearing.waitForClickable({ timeout:4000 })
            await this.verificationOfClearing.click()
         }
         else{
-           await this.clearBusket.waitForClickable()
+           await this.clearBusket.waitForClickable({ timeout:4000 })
            await this.clearBusket.click()
-           await this.verificationOfClearing.waitForClickable()
+           await this.verificationOfClearing.waitForClickable({ timeout:4000 })
            await this.verificationOfClearing.click()
         }
     }
 
     async clearingAfterPrevious(){
-        await browser.pause(3000)
+        await this.clearBusket.waitForClickable({ timeout:4000 })
         await this.clearBusket.click()
-        await browser.pause(3000)
+        await this.verificationOfClearing.waitForClickable({ timeout:4000 })
         await this.verificationOfClearing.click()
 
     }

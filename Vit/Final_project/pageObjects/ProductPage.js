@@ -12,27 +12,27 @@ class ProductPage extends BasePage{
     }
 
     get riekerShoes(){
-        return $('//*[contains(@href, "/product/kedy-rieker-budte-zdorovy-523866151/")]/*[@class="u3j"]')
+        return $('//*[contains(@href, "/product/kedy-rieker-budte-zdorovy-523866151/")]')
     }
 
     get xiaomiThermometr(){
-        return $('//*[contains(@href, "/product/beskontaktnyy-infrakrasnyy-termometr-xiaomi-ihealth-214570350/")]//*[@class="u3j"]')
+        return $('//*[contains(@href, "/product/beskontaktnyy-infrakrasnyy-termometr-xiaomi-ihealth-214570350/")]')
     }
 
     get addTobusket(){
-        return $('.k3v.ui-f2.ui-k .ui-f4.ui-k .ui-f6.ui-g.ui-i4.ui-k')
+        return $('.v4k.ui-a.ui-e7 .ui-a1.ui-e7 .ui-a3.ui-a7.ui-d1.ui-e7')
     }
 
     get transitionToBusket(){
-        return $('.k3v.kv2.ui-f2.ui-k .ui-f4.ui-k .ui-f6.ui-g0.ui-g.ui-i4.ui-k.ui-j2 .ui-j3')
+        return $('//*[contains(text(), "В корзине")]/*[contains(text(), "Перейти")]')
     }
 
     async addItem(element){
-        await browser.pause(4000)
+        await element.waitForClickable({ timeout:4000 })
         await element.click()
-        await browser.pause(4000)
+        await this.addTobusket.waitForClickable({ timeout:4000 })
         await this.addTobusket.click()
-        await browser.pause(4000)
+        await this.transitionToBusket.waitForClickable({ timeout:4000 })
         await this.transitionToBusket.click()
 
     }

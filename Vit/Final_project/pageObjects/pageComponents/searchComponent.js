@@ -1,18 +1,19 @@
+
 const { BasePage } = require('../BasePage')
 
 class Search extends BasePage{
 
 
     get searchFieldXpath(){
-        return $('//*[@class="a0ia"]')
+        return $('//*[@class="aa1i"]')
     }
 
     get resulrOfRequestItem(){
-        return $('.ha2a .h2aa');
+        return $('.a3ha .a3ah');
     }
 
     get filterForSearching(){
-        return $('.ha8a .aah9')
+        return $('.a9ha .haa9')
     }
 
     get electronicaElement(){
@@ -30,32 +31,31 @@ class Search extends BasePage{
 
 
     get abortFilterElement(){
-        return $('.ha8a.h8aa .aa9h')
+        return $('.a9ha.a9ah .ha9a')
     }
 
 
     async searchSomething(value){
-        await browser.pause(2000)
-        this.searchFieldXpath.click()
-        this.searchFieldXpath.setValue(value);
-        await browser.pause(2000)
+        await this.searchFieldXpath.waitForClickable({ timeout:4000 })
+        await this.searchFieldXpath.click()
+        await this.searchFieldXpath.setValue(value);
         await browser.keys('Enter')
     }
 
 
     async setFilter(element){
         if (await this.abortFilterElement.isDisplayed()){
-            await this.abortFilterElement.waitForClickable()
+            await this.abortFilterElement.waitForClickable({ timeout:4000 })
             await this.abortFilterElement.click()
-            await this.filterForSearching.waitForClickable();
+            await this.filterForSearching.waitForClickable({ timeout:4000 })
             await this.filterForSearching.click();
-            await element.waitForClickable();
+            await element.waitForClickable({ timeout:4000 })
             await element.click()
         }
         else{
-            await this.filterForSearching.waitForClickable();
+            await this.filterForSearching.waitForClickable({ timeout:4000 });
             await this.filterForSearching.click();
-            await element.waitForClickable();
+            await element.waitForClickable({ timeout:4000 });
             await element.click()
         }
     }

@@ -19,7 +19,11 @@ class Header extends BasePage{
 
 
     get currency(){
-        return $('//*[@class="ui-f6 ui-g7"]/span[contains(text(),"BYN")]')
+        return $('//*[@class="ui-a3 ui-b4"]/span[contains(text(),"BYN")]')
+    }
+
+    get currencyAfterChanging(){
+        return $('//*[@class="ui-a3 ui-b4"]/span[contains(text(),"USD")]')
     }
 
     get fieldChange(){
@@ -28,40 +32,37 @@ class Header extends BasePage{
 
 
     get cityCurrent(){
-        return $('//*[@class="ui-j3" and contains(text(),"Минск")]')
+        return $('//*[@class="ui-e0" and contains(text(),"Минск")]')
     }
 
     get cityCurrentMoskow(){
-        return $('//*[@class="ui-j3" and contains(text(),"Мосвка")]')
+        return $('//*[@class="ui-e0" and contains(text(),"Мосвка")]')
     }
 
     get cityAfterChanging(){
-        return $('//*[@class="ui-j3" and contains(text(),"Москва")]')
+        return $('//*[@class="ui-e0" and contains(text(),"Москва")]')
     }
 
     get changeCityLink(){
-        return $('.k2.k5.tsBodyM.ui-f2 .ui-f4 .ui-f6.ui-g7')
+        return $('.ui-a3.ui-c6 .ui-d6')
     }
 
     get elementForClickChangeCity(){
-        return $('.d4m.tsBodyL')
+        return $('.m5d.tsBodyL')
     }
 
     get elementForSelectCityMoskow(){
-        return $('//*[@class="d4m tsBodyL" and contains(text(),"Москва") ]')
+        return $('//*[@class="m5d tsBodyL" and contains(text(),"Москва") ]')
     }
 
     get elementForSelectCityMinsk(){
-        return $('//*[@class="d4m tsBodyL" and contains(text(),"Минск") ]')
+        return $('//*[@class="m5d tsBodyL" and contains(text(),"Минск") ]')
     }
 
     get favoritesLinkHeader(){
         return $('//*[@href="/my/favorites"]')
     }
 
-    get elementForCheckFavoritesLink(){
-        return $('//*[@class="ui-a6f"]')
-    }
 
     get orderElement(){
         return $('//*[@href="/my/orderlist"]')
@@ -70,14 +71,14 @@ class Header extends BasePage{
 
 
     async ClickToElement (element){
-        await browser.pause(2000)
+        await element.waitForClickable({ timeout:4000 })
         await element.click()
     }
 
     
 
     async changeCurrency (current, fieldForChange, name){
-        await browser.pause(2000)
+        await current.waitForClickable({ timeout:4000 })
         await current.click()
         await fieldForChange.click()
         await fieldForChange.addValue(name)
@@ -87,9 +88,9 @@ class Header extends BasePage{
 
 
     async changeCity (linkForChanging, newCityElement){
-        await browser.pause(2000)
+        await linkForChanging.waitForClickable({ timeout:4000 })
         await linkForChanging.click()
-        await browser.pause(2000)
+        await this.elementForClickChangeCity.waitForClickable({ timeout:4000 })
         await this.elementForClickChangeCity.click()
         await newCityElement.click()
     }

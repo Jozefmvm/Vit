@@ -28,7 +28,7 @@ describe ('Header testing', function() {
     it('Should be appropiate currency after change from BYN to USD - "USD"', async() => {
         await expect(pageFactory.header.currency).toHaveText('BYN')
         await pageFactory.header.changeCurrency(pageFactory.header.currency, pageFactory.header.fieldChange, 'USD')
-        await expect(pageFactory.header.currency).toHaveText('USD')
+        await expect(pageFactory.header.currencyAfterChanging).toHaveText('USD')
     })
 
 
