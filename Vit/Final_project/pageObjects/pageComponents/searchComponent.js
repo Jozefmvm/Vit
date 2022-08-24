@@ -39,6 +39,7 @@ class Search extends BasePage{
         await this.searchFieldXpath.waitForClickable({ timeout:4000 })
         await this.searchFieldXpath.click()
         await this.searchFieldXpath.setValue(value);
+        await this.searchFieldXpath.waitForClickable({ timeout:4000 })
         await browser.keys('Enter')
     }
 

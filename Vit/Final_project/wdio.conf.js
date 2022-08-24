@@ -5,25 +5,36 @@ exports.config = {
     specs: [
         './test/**/*.test.js'
     ],
-
+ 
     exclude: [],
-
-    maxInstances: 3,
   
+    maxInstances: 3,
+
     capabilities: [{
+
         maxInstances: 2,
+        //
         browserName: 'chrome',
         acceptInsecureCerts: true
-    }],
 
+    }],
+ 
     logLevel: 'info',
+  
     bail: 0,
+ 
     baseUrl: 'http://localhost',
+
     waitforTimeout: 10000,
+
     connectionRetryTimeout: 120000,
+
     connectionRetryCount: 3,
+ 
     services: ['chromedriver'],
+
     framework: 'mocha',
+  
     reporters: [
         ['allure', {
         outputDir: 'allure-results',
@@ -35,7 +46,7 @@ exports.config = {
         ui: 'bdd',
         timeout: 60000
     },
-   
+
      onComplete: function() {
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])

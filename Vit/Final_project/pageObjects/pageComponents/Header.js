@@ -17,7 +17,6 @@ class Header extends BasePage{
         return $$('//*[@class="cr5"]/li')
     }
 
-
     get currency(){
         return $('//*[@class="ui-a3 ui-b4"]/span[contains(text(),"BYN")]')
     }
@@ -29,7 +28,6 @@ class Header extends BasePage{
     get fieldChange(){
         return $('//*[@role="combobox"]')
     }
-
 
     get cityCurrent(){
         return $('//*[@class="ui-e0" and contains(text(),"Минск")]')
@@ -63,11 +61,9 @@ class Header extends BasePage{
         return $('//*[@href="/my/favorites"]')
     }
 
-
     get orderElement(){
         return $('//*[@href="/my/orderlist"]')
     }
-
 
 
     async ClickToElement (element){
@@ -80,6 +76,7 @@ class Header extends BasePage{
     async changeCurrency (current, fieldForChange, name){
         await current.waitForClickable({ timeout:4000 })
         await current.click()
+        await fieldForChange.waitForClickable({ timeout:4000 })
         await fieldForChange.click()
         await fieldForChange.addValue(name)
         await browser.keys('Enter')

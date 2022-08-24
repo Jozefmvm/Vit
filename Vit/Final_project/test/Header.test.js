@@ -25,6 +25,13 @@ describe ('Header testing', function() {
     })
 
 
+    it('Should be approrpiate link after click to orders in header "https://www.ozon.by/my/orderlist"', async() => {
+        await pageFactory.header.ClickToElement(pageFactory.header.orderElement)
+        const linkOfPage = await browser.getUrl()
+        await expect(linkOfPage).toEqual('https://ozon.by/my/orderlist')
+    })
+
+
     it('Should be appropiate currency after change from BYN to USD - "USD"', async() => {
         await expect(pageFactory.header.currency).toHaveText('BYN')
         await pageFactory.header.changeCurrency(pageFactory.header.currency, pageFactory.header.fieldChange, 'USD')
@@ -36,13 +43,6 @@ describe ('Header testing', function() {
         await expect(pageFactory.header.cityCurrent).toHaveText('Минск')
         await pageFactory.header.changeCity(pageFactory.header.changeCityLink, pageFactory.header.elementForSelectCityMoskow)
         await expect(pageFactory.header.cityAfterChanging).toHaveText('Москва')
-    })
-
-
-    it('Should be approrpiate link after click to orders in header "https://www.ozon.ru/my/orderlist"', async() => {
-        await pageFactory.header.ClickToElement(pageFactory.header.orderElement)
-        const linkOfPage = await browser.getUrl()
-        await expect(linkOfPage).toEqual('https://www.ozon.ru/my/orderlist')
     })
 
 

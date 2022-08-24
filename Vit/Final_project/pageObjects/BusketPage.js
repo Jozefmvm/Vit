@@ -28,27 +28,28 @@ class BusketPage extends BasePage{
         return $('.ar4 .ra4')
     }
 
-
     get popUpWinpowClose(){
         return $('//*[@class="ui-a3 ui-b4 ui-d8"]')
     }
 
+
     async clearingOfBusket(){
         if (this.popUpWinpowClose.isDisplayed()){
            await this.popUpWinpowClose.click()
-           await this.clearBusket.waitForClickable({ timeout:4000 })
+           await this.clearBusket.waitForClickable({ timeout:5000 })
            await this.clearBusket.click()
            await this.verificationOfClearing.waitForClickable({ timeout:4000 })
            await this.verificationOfClearing.click()
         }
         else{
-           await this.clearBusket.waitForClickable({ timeout:4000 })
+           await this.clearBusket.waitForClickable({ timeout:5000})
            await this.clearBusket.click()
            await this.verificationOfClearing.waitForClickable({ timeout:4000 })
            await this.verificationOfClearing.click()
         }
     }
 
+    
     async clearingAfterPrevious(){
         await this.clearBusket.waitForClickable({ timeout:4000 })
         await this.clearBusket.click()
