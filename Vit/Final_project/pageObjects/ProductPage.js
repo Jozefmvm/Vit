@@ -28,12 +28,12 @@ class ProductPage extends BasePage{
     }
 
     async addItem(element){
-        await element.waitForClickable({ timeout:4000 })
-        await element.click()
-        await this.addTobusket.waitForClickable({ timeout:4000 })
-        await this.addTobusket.click()
-        await this.transitionToBusket.waitForClickable({ timeout:4000 })
-        await this.transitionToBusket.click()
+        await element.waitForClickable({ timeout:4000 });
+        await element.click();
+        await this.addTobusket.waitForClickable({ timeout:4000 });
+        await this.addTobusket.click();
+        await this.transitionToBusket.waitForClickable({ timeout:4000 });
+        await this.transitionToBusket.click();
 
     }
 
