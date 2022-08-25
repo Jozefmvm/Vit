@@ -11,21 +11,21 @@ describe ('Footer testing', function() {
     })
 
 
-    it('Should be appropiate link in footer element "job.ozon.ru"', async() => {
+    it('Should be appropiate link in footer element "job.ozon.ru" and clickable', async() => {
         const footerElementJob = await pageFactory.footer.vacanciesFooterLink;
         await expect(footerElementJob).toHaveHrefContaining('job.ozon.ru');
         await expect(footerElementJob).toBeClickable();
     })
 
 
-    it('Should be appropiate link in footer element "litres.ru"', async() => {
+    it('Should be appropiate link in footer element "litres.ru" and clickable', async() => {
         const footerElementLiters = await pageFactory.footer.litersFooterLink;
         await expect(footerElementLiters).toHaveHrefContaining('litres.ru');
         await expect(footerElementLiters).toBeClickable();
     })
 
 
-    it('Should be appropiate link in footer element "route256.ozon.ru"', async() => {
+    it('Should be appropiate link in footer element "route256.ozon.ru" and clickable', async() => {
         const footerElementRoute = await pageFactory.footer.routeFooterLink;
         await expect(footerElementRoute).toHaveHrefContaining('route256.ozon.ru');
         await expect(footerElementRoute).toBeClickable();

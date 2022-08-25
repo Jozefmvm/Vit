@@ -5,15 +5,15 @@ class Search extends BasePage{
 
 
     get searchFieldXpath(){
-        return $('//*[@class="aa1i"]');
+        return $('//*[@class="iaa4"]');
     }
 
     get resulrOfRequestItem(){
-        return $('.a3ha .a3ah');
+        return $('.aah7 .aa7h');
     }
 
     get filterForSearching(){
-        return $('.a9ha .haa9');
+        return $('.iaa2 .i2aa');
     }
 
     get electronicaElement(){
@@ -29,9 +29,8 @@ class Search extends BasePage{
     }
 
 
-
     get abortFilterElement(){
-        return $('.a9ha.a9ah .ha9a');
+        return $('.iaa2.ia2a .aai3');
     }
 
 

@@ -20,7 +20,7 @@ class ProductPage extends BasePage{
     }
 
     get addTobusket(){
-        return $('.v4k.ui-a.ui-e7 .ui-a1.ui-e7 .ui-a3.ui-a7.ui-d1.ui-e7');
+        return $('//*[@class="ui-a3 ui-a7 ui-d1 ui-e7"]/*[contains(text(), "Добавить в корзину")]');
     }
 
     get transitionToBusket(){

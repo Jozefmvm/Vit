@@ -8,7 +8,7 @@ class MainPage extends BasePage{
         }
 
     get siteGreetingImg () {
-        return $('.a4.caa5');
+        return $('//*[contains(@href, "https://www.ozon.ru/highlight/tovary-po-vygodnoy-tsene-582383/")]');
     }
 
     get ButtonPromocodeEnter () {
@@ -16,7 +16,7 @@ class MainPage extends BasePage{
     }
 
     get popularThingsElement(){
-        return $('.a4.a5.dx1.tsHeadL');
+        return $('.a4.a5.dx2.tsHeadL');
     }
 
 }

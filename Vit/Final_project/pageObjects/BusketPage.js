@@ -5,7 +5,7 @@ class BusketPage extends BasePage{
 
 
     get itemInBusket(){
-        return $('.dr8.rd8.d9r.sd1.tsBodyM.ua9');
+        return $('.dr9.rd9.sd.sd2.tsBodyM.ua9');
     }
 
     get amountOfThingsPage(){
@@ -13,7 +13,7 @@ class BusketPage extends BasePage{
     }
 
     get amountOfThingsHeaderBusket(){
-        return $('//*[@href="/cart"]/*[@class="tsCaptionBold w7c"]');
+        return $('//*[@href="/cart"]/*[@class="tsCaptionBold w8c"]');
     }
 
     get clearBusket(){

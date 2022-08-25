@@ -11,7 +11,7 @@ describe ('Order testing', function() {
     })
 
 
-    it('Should be appropiate text in busket "Смартфон Samsung Galaxy S20 FE 6/128 ГБ, зеленый"', async() => {
+    it('Should be appropiate text in busket "Смартфон Samsung Galaxy S20 FE 6/128 ГБ, зеленый" and "1"', async() => {
         await pageFactory.search.searchSomething('Samsung Galaxy S20 Fe');
         await pageFactory.productPage.addItem(pageFactory.productPage.greenSamsungS20Fe);
         const busket = await pageFactory.busketPage.itemInBusket;
@@ -22,7 +22,7 @@ describe ('Order testing', function() {
     })
 
 
-    it('Should be appropiate text in busket "мартфон Samsung Galaxy S20 FE 6/128 ГБ, синий"', async() => {
+    it('Should be appropiate text in busket "мартфон Samsung Galaxy S20 FE 6/128 ГБ, синий" and "1"', async() => {
         await pageFactory.busketPage.clearingOfBusket();
         await pageFactory.search.searchSomething('Samsung Galaxy S20 Fe');
         await pageFactory.productPage.addItem(pageFactory.productPage.blueSamsungS20Fe);
@@ -33,7 +33,7 @@ describe ('Order testing', function() {
     })
 
 
-    it('Should be appropiate text in busket "Кеды Rieker Будьте здоровы"', async() => {
+    it('Should be appropiate text in busket "Кеды Rieker Будьте здоровы" and "1"', async() => {
         await pageFactory.busketPage.clearingAfterPrevious();
         await pageFactory.search.searchSomething('rieker');
         await pageFactory.productPage.addItem(pageFactory.productPage.riekerShoes);
@@ -44,7 +44,7 @@ describe ('Order testing', function() {
     })
 
 
-    it('Should be appropiate text in busket "Бесконтактный инфракрасный термометр Xiaomi iHealth"', async() => {
+    it('Should be appropiate text in busket "Бесконтактный инфракрасный термометр Xiaomi iHealth" and "1"', async() => {
         await pageFactory.busketPage.clearingAfterPrevious();
         await pageFactory.search.searchSomething('xiaomi градусник');
         await pageFactory.productPage.addItem(pageFactory.productPage.xiaomiThermometr);

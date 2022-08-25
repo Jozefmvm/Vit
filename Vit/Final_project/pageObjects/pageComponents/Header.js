@@ -33,10 +33,6 @@ class Header extends BasePage{
         return $('//*[@class="ui-e0" and contains(text(),"Минск")]');
     }
 
-    get cityCurrentMoskow(){
-        return $('//*[@class="ui-e0" and contains(text(),"Мосвка")]');
-    }
-
     get cityAfterChanging(){
         return $('//*[@class="ui-e0" and contains(text(),"Москва")]');
     }
@@ -46,15 +42,15 @@ class Header extends BasePage{
     }
 
     get elementForClickChangeCity(){
-        return $('.m5d.tsBodyL');
+        return $('.m6d.tsBodyL');
     }
 
     get elementForSelectCityMoskow(){
-        return $('//*[@class="m5d tsBodyL" and contains(text(),"Москва") ]');
+        return $('//*[@class="m6d tsBodyL" and contains(text(),"Москва")]');
     }
 
     get elementForSelectCityMinsk(){
-        return $('//*[@class="m5d tsBodyL" and contains(text(),"Минск") ]');
+        return $('//*[@class="m6d tsBodyL" and contains(text(),"Минск")]');
     }
 
     get favoritesLinkHeader(){
@@ -72,7 +68,6 @@ class Header extends BasePage{
     }
 
     
-
     async changeCurrency (current, fieldForChange, name){
         await current.waitForClickable({ timeout:4000 });
         await current.click();
@@ -83,7 +78,6 @@ class Header extends BasePage{
     }
 
 
-
     async changeCity (linkForChanging, newCityElement){
         await linkForChanging.waitForClickable({ timeout:4000 });
         await linkForChanging.click();
@@ -91,7 +85,6 @@ class Header extends BasePage{
         await this.elementForClickChangeCity.click();
         await newCityElement.click();
     }
-
 
 
 }
