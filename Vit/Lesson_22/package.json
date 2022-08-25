@@ -1,0 +1,15 @@
+{
+  "name": "lesson_22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.24.2"
+  }
+}
